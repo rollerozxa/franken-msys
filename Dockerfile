@@ -5,7 +5,7 @@ WORKDIR /
 RUN echo -e "\n[multilib]\nInclude = /etc/pacman.d/mirrorlist\n" >> /etc/pacman.conf && \
     pacman -Syu --noconfirm
 
-RUN pacman -S --noconfirm wine cmake ninja
+RUN pacman -S --noconfirm wine cmake ninja pkgconf git wget
 
 RUN curl -L "https://github.com/mstorsjo/llvm-mingw/releases/download/20250114/llvm-mingw-20250114-ucrt-ubuntu-20.04-x86_64.tar.xz" | tar xJkvf - -C "/usr" --strip-components=1
 
